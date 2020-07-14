@@ -23,3 +23,7 @@ tar = "0.4"
 
 [dev-dependencies]
 libc = "0.2"
+
+[features]
+default = ["disassembly"]
+disassembly = []
