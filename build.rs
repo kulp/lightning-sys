@@ -303,7 +303,7 @@ fn main() {
     println!("cargo:rustc-link-search=native={}", libdir.to_str().unwrap());
 
     println!("cargo:rustc-link-lib=static=lightning");
-    if cfg!(disassembly) {
+    if true || cfg!(disassembly) { // XXX TODO
         println!("cargo:rustc-link-lib=static=bfd");
         println!("cargo:rustc-link-lib=static=iberty");
         println!("cargo:rustc-link-lib=static=z");
