@@ -5,7 +5,7 @@ PREFIX=$1
 RELEASE=$2
 (
     cd $PREFIX/$RELEASE
-    ./configure --prefix=$PREFIX --disable-disassembler
+    ./configure --prefix=$PREFIX --enable-disassembler
     make -j4
     make install
 )
