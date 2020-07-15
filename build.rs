@@ -304,9 +304,11 @@ fn main() {
 
     println!("cargo:rustc-link-lib=static=lightning");
     #[cfg(disassembly)]
-    println!("cargo:rustc-link-lib=static=bfd");
-    #[cfg(disassembly)]
-    println!("cargo:rustc-link-lib=static=iberty");
+    {
+        println!("cargo:rustc-link-lib=static=bfd");
+        println!("cargo:rustc-link-lib=static=iberty");
+        println!("cargo:rustc-link-lib=static=z");
+    }
 
     let bt = BTreeMap::new();
     let ce = AssertUnwindSafe(RefCell::new(bt));
