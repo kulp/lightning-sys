@@ -303,6 +303,10 @@ fn main() {
     println!("cargo:rustc-link-search=native={}", libdir.to_str().unwrap());
 
     println!("cargo:rustc-link-lib=static=lightning");
+    #[cfg(disassembly)]
+    println!("cargo:rustc-link-lib=static=bfd");
+    #[cfg(disassembly)]
+    println!("cargo:rustc-link-lib=static=iberty");
 
     let bt = BTreeMap::new();
     let ce = AssertUnwindSafe(RefCell::new(bt));

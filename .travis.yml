@@ -24,12 +24,24 @@ jobs:
       addons:
         apt:
           packages:
+            << *apt_default
             - libc6-i386
             - lib32gcc1
             - gcc-multilib
 
   allow_failures:
     - rust: nightly
+
+addons:
+  apt:
+    packages: &apt_default
+      - binutils-dev
+      - libiberty-dev
+
+# Using the homebrew addon suffers from a bug:
+# https://travis-ci.community/t/macos-build-fails-because-of-homebrew-bundle-unknown-command/7296/27
+before_install:
+  - if [[ $TRAVIS_OS_NAME == osx ]]; then brew install binutils; fi
 
 install:
   - ./scripts/rustup-extras.sh
