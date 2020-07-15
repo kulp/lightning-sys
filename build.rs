@@ -306,6 +306,7 @@ fn main() {
     if cfg!(feature="disassembly") {
         println!("cargo:rustc-link-lib=static=bfd");
         println!("cargo:rustc-link-lib=static=iberty");
+        println!("cargo:rustc-link-lib=static=opcodes");
         println!("cargo:rustc-link-lib=static=z");
     }
 
