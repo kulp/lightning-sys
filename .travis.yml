@@ -13,6 +13,7 @@ rust:
 jobs:
   include:
     - os: windows
+      env: CARGO_BUILD_TARGET=x86_64-pc-windows-gnu
 
   allow_failures:
     - rust: nightly
