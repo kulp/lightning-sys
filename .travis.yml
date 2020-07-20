@@ -21,7 +21,7 @@ install:
   - ./scripts/rustup-extras.sh
 
 script:
-  - cargo test --target-dir /tmp/build --verbose
+  - cargo test --target-dir 'c:/' --verbose
 
 notifications:
   email: false
