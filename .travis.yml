@@ -15,6 +15,7 @@ rust:
 
 jobs:
   include:
+    - os: windows
     - arch: arm64
     - arch: s390x
     - arch: ppc64le
