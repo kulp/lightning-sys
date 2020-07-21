@@ -27,6 +27,10 @@ script:
 notifications:
   email: false
 
+before_script:
+  - git submodule init
+  - git submodule update
+
 before_install:
 - |-
     case $TRAVIS_OS_NAME in
